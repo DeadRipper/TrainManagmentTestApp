@@ -30,7 +30,7 @@ namespace TrainTests.ControllerTests
 
         [Test]
         [TestCase(5)]
-        public async Task GetComponentFindElementInDB(int elementId)
+        public async Task SuccessGetComponentFindElementInDB(int elementId)
         {
             var result = await new ComponentsController(_context, _service).GetComponent(elementId);
             var okResult = result.Result as OkObjectResult;
@@ -60,7 +60,7 @@ namespace TrainTests.ControllerTests
         [TestCase(25)]
         public async Task GetComponentFindEmptyElementInDB(int elementId)
         {
-            //set moq of empty list
+            //set moq of empty component
             _serviceMoq.Setup(x => x.FindComponent(_context, elementId))
                 .Returns(Task.FromResult(new TrainComponent()));
             //place moq in call of controller _serviceMoq.Object

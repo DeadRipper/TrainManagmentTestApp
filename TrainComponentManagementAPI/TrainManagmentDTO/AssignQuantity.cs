@@ -5,6 +5,7 @@ namespace TrainComponentManagementAPI.TrainManagmentDTO
     public class AssignQuantity
     {
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
         public int Quantity { get; set; }
     }
 }

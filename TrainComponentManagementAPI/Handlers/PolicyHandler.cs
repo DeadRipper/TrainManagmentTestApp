@@ -7,7 +7,7 @@ namespace TrainComponentManagementAPI.Handlers
     public static class PolicyHandler
     {
         //set limit to some value
-        private static int failCountLimit = 1;
+        private static int failCountLimit = 3;
         //set retry timeout between attempts as 300 msec
         private static int retryTimeoutMsec = 300;
 

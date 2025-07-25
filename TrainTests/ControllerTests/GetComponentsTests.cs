@@ -28,7 +28,7 @@ namespace TrainTests.ControllerTests
 
         //check if data from real in answer and httpStatusCode is 200 and list in response contains elements
         [Test]
-        public async Task GetComponentsGetDBElements()
+        public async Task SuccessGetComponentsGetDBElements()
         {
             var result = await new ComponentsController(_context, _service).GetComponents();
             var okResult = result.Result as OkObjectResult;

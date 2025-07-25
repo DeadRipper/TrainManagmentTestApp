@@ -63,5 +63,20 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
                 }).ToListAsync());
             return result?.Result;
         }
+
+        /// <summary>
+        /// Method to check if value from DB is not null and has not empty fields
+        /// </summary>
+        /// <param name="component">TrainComponent component object</param>
+        /// <returns>true if item valid else false</returns>
+        public async Task<bool> CheckIfComponentIsNotEmpty(int componentId, TrainComponent component)
+        {
+            if (component == null || component.Id != componentId || string.IsNullOrWhiteSpace(component.Name) || string.IsNullOrWhiteSpace(component.UniqueNumber) || string.IsNullOrWhiteSpace(component.CanAssignQuantity))
+            {
+                return false;
+            }
+            
+            return true;
+        }
     }
 }

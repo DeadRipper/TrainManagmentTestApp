@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.Net.Mime;
 using TrainComponentManagementAPI.TrainManagmentDB;
 using TrainComponentManagementAPI.TrainManagmentDTO;
@@ -26,7 +27,7 @@ namespace TrainComponentManagementAPI.Controllers
         public async Task<ActionResult<TrainComponent>> GetComponent(int id)
         {
             var comp = await _service.FindComponent(_context, id);
-            if (comp == null || comp.Id != id || string.IsNullOrWhiteSpace(comp.Name) || string.IsNullOrWhiteSpace(comp.UniqueNumber) || string.IsNullOrWhiteSpace(comp.CanAssignQuantity)) 
+            if (!await _service.CheckIfComponentIsNotEmpty(id, comp)) 
                 return NotFound();
             return Ok(comp);
         }
@@ -39,7 +40,7 @@ namespace TrainComponentManagementAPI.Controllers
                 return BadRequest("Quantity must be a positive integer.");
 
             var component = await _service.FindComponent(_context, id);
-            if (component == null) 
+            if (!await _service.CheckIfComponentIsNotEmpty(id, component)) 
                 return NotFound();
             if (string.Compare(component.CanAssignQuantity, "No", StringComparison.OrdinalIgnoreCase) == 0)
                 return BadRequest("Quantity cannot be assigned to this component.");

@@ -24,5 +24,11 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
         /// <param name="context">MSSQL context</param>
         /// <returns>all components from DB</returns>
         public Task<List<TrainComponent>> GetAllComponents(TrainDbContext context);
+        /// <summary>
+        /// Method to check if value from DB is not null and has not empty fields
+        /// </summary>
+        /// <param name="component">TrainComponent component object</param>
+        /// <returns>true if item valid else false</returns>
+        public Task<bool> CheckIfComponentIsNotEmpty(int componentId, TrainComponent component);
     }
 }
