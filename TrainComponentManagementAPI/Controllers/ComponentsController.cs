@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mime;
 using TrainComponentManagementAPI.TrainManagmentDB;
 using TrainComponentManagementAPI.TrainManagmentDTO;
 using TrainComponentManagementAPI.TrainManagmentWorker;
@@ -25,11 +26,12 @@ namespace TrainComponentManagementAPI.Controllers
         public async Task<ActionResult<TrainComponent>> GetComponent(int id)
         {
             var comp = await _service.FindComponent(_context, id);
-            if (comp == null) 
+            if (comp == null || comp.Id != id || string.IsNullOrWhiteSpace(comp.Name) || string.IsNullOrWhiteSpace(comp.UniqueNumber) || string.IsNullOrWhiteSpace(comp.CanAssignQuantity)) 
                 return NotFound();
             return Ok(comp);
         }
 
+        [Consumes(MediaTypeNames.Application.Json)]
         [HttpPut("{id}/assign-quantity")]
         public async Task<IActionResult> AssignQuantity(int id, AssignQuantity requestBody)
         {
