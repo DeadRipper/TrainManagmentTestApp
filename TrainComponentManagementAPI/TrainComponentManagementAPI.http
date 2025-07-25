@@ -1,0 +1,6 @@
+@TrainComponentManagementAPI_HostAddress = http://localhost:5033
+
+GET {{TrainComponentManagementAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
