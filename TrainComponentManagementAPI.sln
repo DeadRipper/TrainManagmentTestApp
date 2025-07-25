@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainComponentManagementAPI", "TrainComponentManagementAPI\TrainComponentManagementAPI.csproj", "{9AAAFFFA-0BE1-465C-892E-1E1C49432355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainTests", "TrainTests\TrainTests.csproj", "{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9AAAFFFA-0BE1-465C-892E-1E1C49432355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AAAFFFA-0BE1-465C-892E-1E1C49432355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AAAFFFA-0BE1-465C-892E-1E1C49432355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
