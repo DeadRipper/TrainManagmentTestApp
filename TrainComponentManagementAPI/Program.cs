@@ -23,6 +23,9 @@ namespace TrainComponentManagementAPI
             builder.Services.AddDbContext<TrainDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            // Worker Context
+            builder.Services.AddScoped<ITrainManagmentService, TrainManagmentService>();
+
             var app = builder.Build();
 
             // Global Error Handling

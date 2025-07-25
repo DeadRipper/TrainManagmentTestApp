@@ -2,48 +2,32 @@
 using Microsoft.EntityFrameworkCore;
 using TrainComponentManagementAPI.TrainManagmentDB;
 using TrainComponentManagementAPI.TrainManagmentDTO;
+using TrainComponentManagementAPI.TrainManagmentWorker;
 
 namespace TrainComponentManagementAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ComponentsController : ControllerBase
+    public class ComponentsController(TrainDbContext _context, ITrainManagmentService _service) : ControllerBase
     {
-        private readonly TrainDbContext _context;
-
-        public ComponentsController(TrainDbContext context)
-        {
-            _context = context;
-        }
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Component>>> GetComponents()
+        public async Task<ActionResult<IEnumerable<TrainComponent>>> GetComponents()
         {
-            return await _context.Components
-                .Select(c => new Component
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    UniqueNumber = c.UniqueNumber,
-                    CanAssignQuantity = c.CanAssignQuantity,
-                    Quantity = c.Quantity
-                }).ToListAsync();
+            var lostOfComponents = await _service.GetAllComponents(_context);
+            if (lostOfComponents == null || lostOfComponents?.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(lostOfComponents);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Component>> GetComponent(int id)
+        public async Task<ActionResult<TrainComponent>> GetComponent(int id)
         {
-            var comp = await _context.Components.FindAsync(id);
-            if (comp == null) return NotFound();
-
-            return new Component
-            {
-                Id = comp.Id,
-                Name = comp.Name,
-                UniqueNumber = comp.UniqueNumber,
-                CanAssignQuantity = comp.CanAssignQuantity,
-                Quantity = comp.Quantity
-            };
+            var comp = await _service.FindComponent(_context, id);
+            if (comp == null) 
+                return NotFound();
+            return Ok(comp);
         }
 
         [HttpPut("{id}/assign-quantity")]
@@ -52,14 +36,14 @@ namespace TrainComponentManagementAPI.Controllers
             if (requestBody.Quantity <= 0)
                 return BadRequest("Quantity must be a positive integer.");
 
-            var component = await _context.Components.FindAsync(id);
+            var component = await _service.FindComponent(_context, id);
             if (component == null) 
                 return NotFound();
             if (string.Compare(component.CanAssignQuantity, "No", StringComparison.OrdinalIgnoreCase) == 0)
                 return BadRequest("Quantity cannot be assigned to this component.");
 
             component.Quantity = requestBody.Quantity;
-            await _context.SaveChangesAsync();
+            await _service.SavedContextInDB(_context);
 
             return Ok();
         }
