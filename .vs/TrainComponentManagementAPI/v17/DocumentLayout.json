@@ -7,18 +7,6 @@
       "RelativeMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|solutionrelative:traincomponentmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|c:\\repos\\tttttttt\\traintests\\db\\retrytestdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|solutionrelative:traintests\\db\\retrytestdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|c:\\repos\\tttttttt\\traintests\\db\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|solutionrelative:traintests\\db\\dbcontexthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|c:\\repos\\tttttttt\\traintests\\db\\dbretrytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5CFE93B-4B81-4901-9CE5-AD3202423DC0}|TrainTests\\TrainTests.csproj|solutionrelative:traintests\\db\\dbretrytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|c:\\repos\\tttttttt\\traincomponentmanagementapi\\trainmanagmentworker\\trainmanagmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|solutionrelative:traincomponentmanagementapi\\trainmanagmentworker\\trainmanagmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|solutionrelative:traincomponentmanagementapi\\handlers\\policyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|c:\\repos\\tttttttt\\traincomponentmanagementapi\\handlers\\policyhandlerwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|solutionrelative:traincomponentmanagementapi\\handlers\\policyhandlerwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|c:\\repos\\tttttttt\\traincomponentmanagementapi\\trainmanagmentworker\\itrainmanagmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AAAFFFA-0BE1-465C-892E-1E1C49432355}|TrainComponentManagementAPI\\TrainComponentManagementAPI.csproj|solutionrelative:traincomponentmanagementapi\\trainmanagmentworker\\itrainmanagmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,50 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RetryTestDbContext .cs",
-              "DocumentMoniker": "C:\\repos\\tttttttt\\TrainTests\\DB\\RetryTestDbContext .cs",
-              "RelativeDocumentMoniker": "TrainTests\\DB\\RetryTestDbContext .cs",
-              "ToolTip": "C:\\repos\\tttttttt\\TrainTests\\DB\\RetryTestDbContext .cs",
-              "RelativeToolTip": "TrainTests\\DB\\RetryTestDbContext .cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T10:51:54.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DbContextHelper.cs",
-              "DocumentMoniker": "C:\\repos\\tttttttt\\TrainTests\\DB\\DbContextHelper.cs",
-              "RelativeDocumentMoniker": "TrainTests\\DB\\DbContextHelper.cs",
-              "ToolTip": "C:\\repos\\tttttttt\\TrainTests\\DB\\DbContextHelper.cs",
-              "RelativeToolTip": "TrainTests\\DB\\DbContextHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T10:39:49.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PolicyHandlerWrapper.cs",
-              "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Handlers\\PolicyHandlerWrapper.cs",
-              "RelativeDocumentMoniker": "TrainComponentManagementAPI\\Handlers\\PolicyHandlerWrapper.cs",
-              "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Handlers\\PolicyHandlerWrapper.cs",
-              "RelativeToolTip": "TrainComponentManagementAPI\\Handlers\\PolicyHandlerWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T10:33:24.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "PolicyHandler.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Handlers\\PolicyHandler.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\Handlers\\PolicyHandler.cs",
@@ -115,19 +60,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DBRetryTests.cs",
-              "DocumentMoniker": "C:\\repos\\tttttttt\\TrainTests\\DB\\DBRetryTests.cs",
-              "RelativeDocumentMoniker": "TrainTests\\DB\\DBRetryTests.cs",
-              "ToolTip": "C:\\repos\\tttttttt\\TrainTests\\DB\\DBRetryTests.cs",
-              "RelativeToolTip": "TrainTests\\DB\\DBRetryTests.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAA0wEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T20:59:39.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "TrainDbContext.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentDB\\TrainDbContext.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\TrainManagmentDB\\TrainDbContext.cs",
@@ -140,20 +72,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "TrainComponent.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentDTO\\TrainComponent.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\TrainManagmentDTO\\TrainComponent.cs",
               "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentDTO\\TrainComponent.cs",
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentDTO\\TrainComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T13:18:16.99Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\appsettings.json",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\appsettings.json",
@@ -165,39 +97,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "TrainManagmentService.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentWorker\\TrainManagmentService.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\TrainManagmentWorker\\TrainManagmentService.cs",
               "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentWorker\\TrainManagmentService.cs",
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentWorker\\TrainManagmentService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA4wCYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T12:10:27.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "ITrainManagmentService.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentWorker\\ITrainManagmentService.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\TrainManagmentWorker\\ITrainManagmentService.cs",
               "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\TrainManagmentWorker\\ITrainManagmentService.cs",
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentWorker\\ITrainManagmentService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAawCYAAABvAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAawBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T12:10:07.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "ComponentsController.cs",
               "DocumentMoniker": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Controllers\\ComponentsController.cs",
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\Controllers\\ComponentsController.cs",
               "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Controllers\\ComponentsController.cs",
               "RelativeToolTip": "TrainComponentManagementAPI\\Controllers\\ComponentsController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAUwCYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T08:35:33.314Z",
               "EditorCaption": ""
@@ -210,7 +142,7 @@
               "RelativeDocumentMoniker": "TrainComponentManagementAPI\\Program.cs",
               "ToolTip": "C:\\repos\\tttttttt\\TrainComponentManagementAPI\\Program.cs",
               "RelativeToolTip": "TrainComponentManagementAPI\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T08:00:09.755Z",
               "EditorCaption": ""
