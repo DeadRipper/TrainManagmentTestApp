@@ -54,8 +54,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\Handlers\\PolicyHandler.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T20:41:18.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T20:41:18.372Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentDB\\TrainDbContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T13:20:30.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T13:20:30.797Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentDTO\\TrainComponent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T13:18:16.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T13:18:16.99Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentWorker\\TrainManagmentService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAiwB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T12:10:27.796Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T12:10:27.796Z"
             },
             {
               "$type": "Document",
@@ -118,8 +114,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\TrainManagmentWorker\\ITrainManagmentService.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAawBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T12:10:07.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T12:10:07.379Z"
             },
             {
               "$type": "Document",
@@ -131,8 +126,7 @@
               "RelativeToolTip": "TrainComponentManagementAPI\\Controllers\\ComponentsController.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAUwCYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T08:35:33.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T08:35:33.314Z"
             },
             {
               "$type": "Document",
