@@ -25,6 +25,7 @@ namespace TrainComponentManagementAPI
 
             // Worker Context
             builder.Services.AddScoped<ITrainManagmentService, TrainManagmentService>();
+            builder.Services.AddScoped<IPolicyHandler, PolicyHandlerWrapper>();
 
             var app = builder.Build();
 
