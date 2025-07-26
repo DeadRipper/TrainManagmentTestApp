@@ -30,5 +30,12 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
         /// <param name="component">TrainComponent component object</param>
         /// <returns>true if item valid else false</returns>
         public Task<bool> CheckIfComponentIsNotEmpty(int componentId, TrainComponent component);
+        /// <summary>
+        /// Method for updating component
+        /// </summary>
+        /// <param name="context">MSSQL context</param>
+        /// <param name="id">id of element in table</param>
+        /// <returns>updated entity of component</returns>
+        public Task<TrainComponent> UpdateComponent(TrainDbContext context, TrainComponent componentFromRequest);
     }
 }

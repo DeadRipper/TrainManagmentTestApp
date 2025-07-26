@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainComponentManagementAPI.Controllers;
+using TrainComponentManagementAPI.Handlers;
 using TrainComponentManagementAPI.TrainManagmentDB;
 using TrainComponentManagementAPI.TrainManagmentDTO;
 using TrainComponentManagementAPI.TrainManagmentWorker;
@@ -19,13 +20,15 @@ namespace TrainTests.ControllerTests
         private TrainDbContext _context;
         private Mock<ITrainManagmentService> _serviceMoq;
         private ITrainManagmentService _service;
+        private IPolicyHandler _policyHandler;
 
         [SetUp]
         public void Setup()
         {
             _context = DbContextHelper.GetInMemoryDbContext();
             _serviceMoq = new Mock<ITrainManagmentService>();
-            _service = new TrainManagmentService(new Mock<ILogger<TrainManagmentService>>().Object);
+            _policyHandler = new PolicyHandlerWrapper();
+            _service = new TrainManagmentService(_policyHandler, new Mock<ILogger<TrainManagmentService>>().Object);
         }
 
         [Test]

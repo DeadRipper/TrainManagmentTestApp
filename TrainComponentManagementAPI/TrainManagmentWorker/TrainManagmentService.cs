@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Polly;
 using System.Threading;
 using TrainComponentManagementAPI.Handlers;
 using TrainComponentManagementAPI.TrainManagmentDB;
@@ -6,8 +7,16 @@ using TrainComponentManagementAPI.TrainManagmentDTO;
 
 namespace TrainComponentManagementAPI.TrainManagmentWorker
 {
-    public class TrainManagmentService(ILogger<TrainManagmentService> log) : ITrainManagmentService
+    public class TrainManagmentService : ITrainManagmentService
     {
+        private readonly IPolicyHandler? _policyHandler;
+        private readonly ILogger<TrainManagmentService>? _log;
+
+        public TrainManagmentService(IPolicyHandler policyHandler, ILogger<TrainManagmentService> log)
+        {
+            _policyHandler = policyHandler;
+            _log = log;
+        }
         /// <summary>
         /// Save context in MSSQL 
         /// </summary>
@@ -15,7 +24,7 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
         /// <returns>if save successfull - true, else - false</returns>
         public async Task<bool> SavedContextInDB(TrainDbContext context)
         {
-            var policy = PolicyHandler.GetDbRetryPolicy("Call SaveContext", log);
+            var policy = _policyHandler.GetDbRetryPolicy("Call SaveContext", _log);
             try
             {
                 var result = await policy.ExecuteAndCaptureAsync(
@@ -37,7 +46,7 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
         /// <returns>DTO object from DB with information about a product by id</returns>
         public async Task<TrainComponent> FindComponent(TrainDbContext context, int id)
         {
-            var result = await PolicyHandler.GetDbRetryPolicy("Call FindComponent", log).ExecuteAndCaptureAsync(
+            var result = await _policyHandler.GetDbRetryPolicy("Call FindComponent", _log).ExecuteAndCaptureAsync(
                 async () =>
                 await context.Components.FindAsync(id));
             return result?.Result;
@@ -50,7 +59,7 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
         /// <returns>all components from DB</returns>
         public async Task<List<TrainComponent>> GetAllComponents(TrainDbContext context)
         {
-            var result = await PolicyHandler.GetDbRetryPolicy("Call GetAllComponents", log).ExecuteAndCaptureAsync(
+            var result = await _policyHandler.GetDbRetryPolicy("Call GetAllComponents", _log).ExecuteAndCaptureAsync(
                 async () =>
                 await context.Components
                 .Select(c => new TrainComponent
@@ -77,6 +86,43 @@ namespace TrainComponentManagementAPI.TrainManagmentWorker
             }
             
             return true;
+        }
+
+        /// <summary>
+        /// Method for updating component
+        /// </summary>
+        /// <param name="context">MSSQL context</param>
+        /// <param name="id">id of element in table</param>
+        /// <returns>updated entity of component</returns>
+        public async Task<TrainComponent> UpdateComponent(TrainDbContext context, TrainComponent component)
+        {
+            try
+            {
+                var componentSearch = await FindComponent(context, component.Id);
+                if (componentSearch == null || !await CheckIfComponentIsNotEmpty(componentSearch.Id, componentSearch))
+                    throw new Exception("NotFound component in DB");
+
+                componentSearch.UniqueNumber = component.UniqueNumber;
+                componentSearch.Quantity = component.Quantity;
+                componentSearch.Name = component.Name;
+                //make StringComparison.Ordinal to compare lower\upper case of Yes and No. By task Yas and No always in uppercase
+                if (string.Compare(component.CanAssignQuantity, "Yes", StringComparison.Ordinal) != 0 && string.Compare(component.CanAssignQuantity, "No", StringComparison.Ordinal) != 0)
+                {
+                    throw new Exception("CanAssignQuantity invalid");
+                }
+
+                componentSearch.CanAssignQuantity = component.CanAssignQuantity;
+
+                await SavedContextInDB(context);
+
+                return component;
+            }
+            catch (Exception ex)
+            {
+                _log.LogError($"UpdateComponent :: {ex}");
+                return null;
+            }
+
         }
     }
 }
