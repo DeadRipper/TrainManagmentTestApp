@@ -8,7 +8,7 @@ namespace TrainComponentManagementAPI.TrainManagmentDB
         public TrainDbContext(DbContextOptions<TrainDbContext> options)
             : base(options) { }
 
-        public DbSet<TrainComponent> Components { get; set; }
+        public virtual DbSet<TrainComponent> Components { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

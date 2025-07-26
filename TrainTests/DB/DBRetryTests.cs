@@ -35,26 +35,37 @@ namespace TrainTests.DB
         }
 
         [Test]
-        public async Task RetryCheckerSuccessCountedRetry()
+        public async Task SavedContextInDB_RetriesAndSucceeds()
         {
-            //_contextMock.Setup(x => x.SaveChangesAsync(It.IsAny<CancellationToken>())).Throws(new Exception());
-            ////_serviceMoq.Setup(x => x.SavedContextInDB(It.IsAny<TrainDbContext>())).Returns(Task.FromResult(true));
-            //_serviceMoq.Setup(x => x.FindComponent(It.IsAny<TrainDbContext>(), It.IsAny<int>())).Returns(Task.FromResult(new TrainComponent()
-            //{
-            //    Id = 1,
-            //    CanAssignQuantity = "Yes",
-            //    Name = "1",
-            //    Quantity = null,
-            //    UniqueNumber = "1"
-            //}));
-            //_serviceMoq.Setup(x => x.CheckIfComponentIsNotEmpty(It.IsAny<int>(), It.IsAny<TrainComponent>())).Returns(Task.FromResult(true));
+            // Arrange
+            var options = new DbContextOptionsBuilder<TrainDbContext>()
+                .UseInMemoryDatabase(databaseName: "RetryTestDB")
+                .Options;
 
-            var ffffffff = await new ComponentsController(_context, _service).
-                AssignQuantity(1,
-                new AssignQuantity() { Quantity=1 });
+            var loggerMock = new Mock<Microsoft.Extensions.Logging.ILogger<TrainManagmentService>>(); // or ILogger<MyService>
 
-            //_serviceMoq.Verify(x => x.SavedContextInDB(It.IsAny<TrainDbContext>()), Times.Exactly(4));
+            // Real Polly retry policy: retry 3 times
+            var retryPolicy = Policy
+                .Handle<Exception>()
+                .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromMilliseconds(10));
+
+            var policyHandlerMock = new Mock<IPolicyHandler>();
+            policyHandlerMock
+                .Setup(x => x.GetDbRetryPolicy(It.IsAny<string>(), It.IsAny<Microsoft.Extensions.Logging.ILogger<TrainManagmentService>>()))
+                .Returns(retryPolicy);
+
+            // Use a DB context that fails twice before succeeding
+            var context = new RetryTestDbContext(options, failLimit: 2);
+
+            var service = new TrainManagmentService(policyHandlerMock.Object, loggerMock.Object);
+
+            // Act
+            var result = await service.SavedContextInDB(context);
+
+            // Assert
+            Assert.That(result == true); // Should return true after retries
         }
+
 
         [TearDown]
         public void Dispose()
